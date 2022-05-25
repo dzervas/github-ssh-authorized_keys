@@ -51,11 +51,13 @@ done
 if $ENABLE; then
 	echo "[!] Adding cronjob to download (append, not replace) new authorized keys from GitHub user ${GITHUB_USER} every day at 06:00 AM"
 	echo "0 6 * * * ${CALL_NAME} --username ${GITHUB_USER}" | crontab -
+	echo "[i] Some tinkering might be needed using the 'crontab -e' command"
 	exit 0
 fi
 
 if $DISABLE; then
-	exit 0
+	echo "[x] Not implemented yet"
+	exit 1
 fi
 
 echo "[i] Downloading keys for GitHub user: ${GITHUB_USER}"
